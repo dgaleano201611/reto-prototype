@@ -1,13 +1,12 @@
 //palindrome es una palabra que se lee de la misma forma hacia a delante o hacia atras
 //eliminar los espacios que puedan tener la cadena
 
-String.prototype.palindromo = function(string){
-    string = string.replaceAll(" ", "");
-    esPalidromo = string.split("").reverse().join("")
+String.prototype.palindrome = function(){
+    let cleanString = this.replaceAll(" ", "");
+    reverseString = cleanString.split("").reverse().join("")
 
-    return string === esPalidromo ? true : false;
+    return cleanString === reverseString ? true : false;
 }
-string = new String(); 
 
-console.log(string.palindromo("anita lava la tina"))
-console.log(string.palindromo("prueba"))
+console.log("anita lava la tina".palindrome());//true
+console.log("prueba".palindrome());//false
