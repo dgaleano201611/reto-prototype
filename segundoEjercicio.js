@@ -11,13 +11,13 @@ Auto.prototype.acelerar = function(increment){
 Auto.prototype.frenar = function(decrement){
     this.velocidad = this.velocidad - decrement
 
-    if (this.velocidad < 0){
-        this.velocidad = 0;
+    return this.velocidad < 0 ? 0 : this.velocidad ;
 
-        return this.velocidad;
+    /* if (this.velocidad < 0){
+        return this.velocidad = 0;
     }else {
         return this.velocidad
-    }
+    } */
 }
 
 car1 = new Auto();
@@ -26,3 +26,4 @@ console.log(car1.velocidad); //0
 console.log(car1.acelerar(1)); //1
 console.log(car1.acelerar(10)); //11
 console.log(car1.frenar(2)); //9
+console.log(car1.frenar(10)); //0
